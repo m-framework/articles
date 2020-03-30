@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'Add new article' => 'Додати нову статтю',
+    'New article text' => 'Текст нової статті',
+    'Article title' => 'Заголовок статті',
+    'Main article image' => 'Головне зображення статті',
+    'Article short description' => 'Короткий опис статті',
+    'Article tags' => 'Теги статті',
+    'Article content' => 'Контент статті','to open the article in pdf' => 'Відкрити статтю в pdf',
+    'to save article' => 'Зберегти статтю',
+    'to delete article' => 'Видалити статтю',
+    'to edit this article' => 'Редагувати цю статтю',
+    'to delete this article' => 'Видалити цю статтю',
+    'to add new article' => 'Додати нову статтю',
+    'article title' => 'Заголовок статті',
+    'article text' => 'Текст статті',
+    'article kind' => 'Вигляд статті',
+    'convolute article' => 'Згорнута стаття',
+    'opened article' => 'Розкрита стаття',
+    'to displace the article' => 'Згорнути статтю',
+    'to open out the article' => 'Відкрити статтю',
+    'to edit article' => 'Внести зміни до статті',
+    'article opened arrow text' => 'Згорнути статтю',
+    'article convolute arrow text' => 'Розгорнути статтю для читання',
+    'Add article right here' => 'Додати статтю прямо тут',
+    'Add article in admin panel' => 'Додати статтю в адмін-панелі',
+];

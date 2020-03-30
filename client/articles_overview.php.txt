@@ -1,0 +1,97 @@
+<?php
+
+namespace modules\articles\client;
+
+use
+    m\module,
+    modules\articles\models\articles,
+    modules\articles\models\articles_tags,
+    modules\pages\models\pages,
+    m\registry,
+    m\view;
+
+class articles_overview extends module {
+
+    public $arr = [];
+    public $articles = [];
+    public $articleId = '';
+    public $articleTitle = '';
+    public $subpage = '';
+
+    protected $count = 5;
+    protected $page_id = 1;
+
+    protected $cache = true;
+    protected $cache_per_page = true;
+
+    protected $css = ['/css/article.css'];
+
+    public static $_name = '*Articles previews*';
+
+    public function _init()
+    {
+        $articles = $pages = [];
+
+        $items = articles::call_static()
+            ->select(
+                [],
+                [],
+                [
+                    'site' => $this->site->id,
+                    'page' => $this->page_id,
+                    'language' => $this->language_id,
+                ],
+                [],
+                ['sequence' => 'ASC', 'date' => 'DESC'],
+                [$this->count]
+            )
+            ->all();
+
+        if (empty($items) || !isset($this->view->{$this->module_name}) || !isset($this->view->{$this->module_name . '_item'}))
+            return false;
+
+        foreach ($items as $row) {
+
+            $tags = [];
+
+            if (!empty($row['tags'])) {
+                $_tags = articles_tags::call_static()
+                    ->s([], ['id' => array_filter(explode(',', trim($row['tags'])))], ['10'])
+                    ->all();
+            }
+
+            if (!empty($_tags)) {
+                foreach ($_tags as $tag) {
+                    $tags[] = '<a href="' . $this->page->get_path() . '/by_tag/' . urlencode(trim($tag['tag'])) .
+                        '">#' . $tag['tag'] . '</a>';
+                }
+            }
+
+            if (empty($pages[$row['page']]))
+                $pages[$row['page']] = new pages($row['page']);
+
+            $row['tags_links'] = implode(' ', $tags);
+            $row['text'] = htmlspecialchars_decode($row['text']);
+            $row['description'] = htmlspecialchars_decode($row['description']);
+            $row['comments'] = '';
+            $row['article_link'] = $pages[$row['page']]->get_path() . '/' . $row['alias'];
+            $row['date'] = strftime('%B %e, %Y', strtotime($row['date']));
+
+            $articles[] = $this->view->{$this->module_name . '_item'}->prepare($row);
+
+            unset($row);
+        }
+
+        unset($articles_items);
+        unset($article_view);
+
+        if (empty($articles))
+            return false;
+
+        view::set($this->module_name, $this->view->{$this->module_name}->prepare([
+            'items' => implode("<!--\n-->", $articles)
+        ]));
+
+        unset($articles);
+    }
+}

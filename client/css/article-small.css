@@ -1,0 +1,79 @@
+.article-small {
+    height: 280px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    margin: 20px 10px 0 10px;
+    background-color: #fff;
+}
+/*.article-small:before {*/
+    /*content: '';*/
+    /*position: absolute;*/
+    /*display: inline-block;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*left: 0;*/
+    /*top: 0;*/
+    /*background-color: #444444;*/
+    /*opacity: 0.4;*/
+/*}*/
+.article-small img {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+.article-small .text {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    left: 20px;
+    top: auto;
+    padding: 0 10px;
+    color: #444;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.article-small .text h2 {
+    line-height: 1em;
+}
+.article-small .text h2 a {
+    font-size: 15px;
+    color: #444;
+    font-weight: 600;
+    text-decoration: none;
+}
+.article-small .text h2 a:hover {
+    text-decoration: underline;
+}
+.article-small .text .description,
+.article-small .text .tags
+{
+    display: block;
+    height: 0;
+    overflow: hidden;
+    -moz-transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+.article-small .text .description {
+    color: #666;
+}
+.article-small:hover .text .description {
+    height: 80px;
+}
+.article-small:hover .text .tags {
+    height: 24px;
+    text-align: center;
+}
+.article-small .text .date {
+    display: block;
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    padding: 5px 0;
+}

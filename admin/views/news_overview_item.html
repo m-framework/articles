@@ -1,0 +1,26 @@
+<tr data-id="~id~" data-sequence="~sequence~">
+    <td width="15%">
+        <i class="move"></i>
+        <a href="~language_prefix~/~pagename~/articles/edit/~id~"
+           title="*Edit*"
+           class="edit"><i class="fa fa-pencil"></i></a>
+        <a href="~language_prefix~/~pagename~/articles/delete/~id~"
+           title="*Delete*"
+           onclick="return confirm('*Are you sure want to delete this article*?');"
+           class="delete"><i class="fa fa-trash-o"></i>
+        </a>
+        <a href="~language_prefix~~path~"
+           title="*View this article*"
+           target="_blank"
+           class="btn-white"><i class="fa fa-eye"></i>
+        </a>
+        <a href="~language_prefix~/~pagename~/articles/duplicate/~id~"
+           title="*Duplicate this article*"
+           class="btn-white"><i class="fa fa-clone"></i>
+        </a>
+    </td>
+    <td width="25%" class="text-left"><a href="~language_prefix~~path~" target="_blank" title="*View this article*">~language_prefix~~path~</a></td>
+    <td width="40%" class="text-left">~title~</td>
+    <td width="10%"><i class="fa check-~published~"></i></td>
+    <td width="10">~date~</td>
+</tr>

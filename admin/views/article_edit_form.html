@@ -1,0 +1,14 @@
+<form name="article_form" action="" method="post" class="edit-form">
+    <div class="additional-links">
+        <a onclick="return article_form.submit();" title="*Save*"><i class="fa fa-save"></i></a> &nbsp;
+        <a href="~language_prefix~/~pagename~/articles/delete/~id~" onclick="return confirm('*Are you sure to delete this article*?');" title="*Delete*"><i class="fa fa-trash"></i></a> &nbsp;
+        <a href="~language_prefix~/~pagename~/articles" title="*Articles overview*"><i class="fa fa-file-text-o"></i></a> &nbsp;
+        <a href="~language_prefix~~article_path~" target="_blank" title="*View this article*"><i class="fa fa-eye"></i></a>
+    </div>
+    ~errors~
+    ~saved~
+    ~rows~
+    <dl class="edit_row">
+        <dt></dt><dd><button class="btn" type="submit"><i class="fa fa-save" aria-hidden="true"></i> *Save*</button></dd>
+    </dl>
+</form>

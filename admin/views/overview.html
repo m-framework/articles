@@ -1,0 +1,22 @@
+<div class="additional-links">
+    <a href="~language_prefix~/~route~/add" title="*Add new article*"><i class="fa fa-file-o"></i></a>
+</div>
+<form class="row">
+    <label class="w50 txt-r">*You can to choose a page*:</label>
+    <select class="w50" data-m-action="select_url_parameter" data-m-name="page">~page_options~</select>
+</form>
+<div class="clearfix"><br></div>
+<table cellpadding="0" cellspacing="0" class="admin-overview">
+<thead>
+    <tr>
+        <th width="20%"></th>
+        <th width="25%" class="text-left">*Path*</th>
+        <th width="35%" class="text-left">*Title*</th>
+        <th width="10%">*Published*</th>
+        <th width="10%">*Date*</th>
+    </tr>
+</thead>
+<tbody data-m-action="drag_sort" data-m-model="modules\articles\models\articles">
+    ~items~
+</tbody>
+</table>

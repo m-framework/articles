@@ -1,0 +1,21 @@
+{
+  "title":"Articles",
+  "name":"articles",
+  "description":"Module for adding to the site a text materials like publications, news etc.",
+  "icon":"<i class=\"fa fa-file-text-o\"></i>",
+  "version":"1.0",
+  "date":"2017-07-04",
+  "author":"mrinmiro@gmail.com",
+  "compatible_cores":["1.0"],
+  "dashboard_menu":{
+    "":"<i class=\"fa fa-file-text-o\"></i> *Articles overview*",
+    "/add":"<i class=\"fa fa-plus\"></i> *Add new article*",
+    "/news":"<i class=\"fa fa-file-text-o\"></i> *News*",
+    "/news-add":"<i class=\"fa fa-plus\"></i> *Add news item*",
+    "/tags":"<i class=\"fa fa-tags\"></i> *Articles tags*",
+    "../../../admin/modules/options/articles":"<i class=\"fa fa-cog\"></i> *Module options*"
+  },
+  "tags":["text data","publications","articles","news"],
+  "price":"0",
+  "requires":["pages","users","files"]
+}

@@ -1,0 +1,198 @@
+.article.preview .text img {
+    float: left;
+    max-width: 200px;
+    max-height: 200px;
+    display: inline-block;
+    margin: 0 20px 10px 0;
+}
+.article a.more {
+    display: inline-block;
+    padding: 5px 0;
+    background-color: transparent;
+    border-radius: 2px;
+    font-size: 0.8em;
+    color: #578493;
+    font-weight: 200;
+    text-decoration: none;
+    text-transform: lowercase;
+    margin-top: 5px;
+}
+.article a.more:hover {
+    color: #666;
+    padding: 5px 15px;
+    background-color: #eee;
+}
+.article > .text img {
+    max-width: 100%;
+    display: inline-block;
+    margin: 0 20px 10px 0;
+}
+.article div.alias,
+.article div.image,
+.article div.description,
+.article div.tags
+{
+    display: none;
+}
+.article.editable div.alias,
+.article.editable div.image,
+.article.editable div.description,
+.article.editable div.tags
+{
+    display: block;
+}
+.article.editable p.editable-title {
+    margin: 20px 0 -10px 0;
+    display: block;
+    color: #666;
+    font-style: italic;
+    padding: 10px 0 0 0;
+    border-top: solid 1px #eee;
+}
+.article.editable .image {
+    position: relative;
+}
+.article.editable .image a.edit {
+    position: absolute;
+    right: 5px;
+    top: 45px;
+    font-size: 24px;
+}
+.article.add-article {
+    border: dashed 1px #ccc;
+    padding-bottom: 0;
+}
+.article.add-article .white-header {
+    background-color: #f7fcff;
+    border-bottom: none 0;
+}
+.article.add-article.editable {
+    padding-bottom: 20px;
+}
+.article.add-article h2 textarea,
+.article.add-article [data-edit="text"]
+{
+    display: none;
+}
+.article.add-article h2 span {
+    display: block;
+}
+.article.add-article.editable h2 textarea,
+.article.add-article.editable [data-edit="text"]
+{
+    display: block;
+}
+.article.add-article.editable h2 span {
+    display: none;
+}
+.article-attachments-wrapper {
+    margin-top: 20px;
+    border-top: solid 1px #eee;
+    padding-top: 10px;
+}
+.article-attachments-wrapper div.attachment-article-image {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+.article-attachments-wrapper div.attachment-article-image:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+.article-attachments-wrapper div.attachment-article-image div.attachment-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    background-color: #fff;
+    border: solid 1px #eee;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 2px;
+}
+.article-attachments-wrapper div.attachment-article-image img {
+    max-width: 100%;
+    max-height: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.article-attachments-wrapper .attachment-article-video {
+    display: inline-block;
+    float: none;
+    clear: both;
+    padding: 10px;
+    width: 100%;
+}
+.article-attachments-wrapper .attachment-article-video iframe {
+    width: 100%;
+    border: none 0;
+}
+.article .img-block {
+    display: block;
+    background-color: #f7f7f7;
+    text-align: center;
+    height: 300px;
+    overflow: hidden;
+    margin: 10px 0;
+    position: relative;
+}
+.article .text {
+    min-height: 48px;
+}
+.article .img-block img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    min-height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+.article .footer,
+.article .white-footer
+{
+    padding: 10px 0;
+    border-top: solid 1px #dddddd;
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: #999999;
+}
+
+
+@media (max-width: 920px) {
+    .article .img-block {
+        height: 260px;
+    }
+    .article .img-block img {
+        margin-top: -20px;
+    }
+}
+@media (max-width: 768px) {
+    .article .img-block {
+        height: 200px;
+    }
+    .article .img-block img {
+        margin-top: -10px;
+    }
+    .container .w75 .article h1 {
+        font-size: 1.75em;
+    }
+}
+@media (max-width: 480px) {
+    .article .img-block img {
+        margin-top: 0;
+    }
+    .container .w75 .article h1 {
+        line-height: 1.25em;
+    }
+}
