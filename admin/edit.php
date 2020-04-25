@@ -143,7 +143,7 @@ class edit extends module {
 //                ],
                 'author' => [
                     'field_name' => i18n::get('Author'),
-                    'related' => users_info::call_static()->s(['profile as value', "CONCAT(first_name,' ',last_name) as name"],[],10000)->all(),
+                    'related' => users_info::call_static()->s(['profile as value', "CONCAT(first_name,' ',last_name) as name"],[],[10000])->all(),
                 ],
                 'disallow_comments' => [
                     'type' => 'tinyint',
